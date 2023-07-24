@@ -4,6 +4,7 @@ import com.chatico.authservice.repositiry.UserChatRepository;
 import com.chatico.authservice.service.CustomAuthenticationProvider;
 import com.chatico.authservice.service.CustomUserDetailService;
 import com.chatico.authservice.service.UserService;
+import com.chatico.authservice.service.UserchatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,18 +26,18 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig {
-    private final UserService userService;
+    private final UserchatService userchatService;
 //    private final JwtTokenProvider jwtTokenProvider;
     private final CustomAuthenticationProvider authenticationProvider;
     private final UserChatRepository userChatRepository;
 
 
     @Autowired
-    public WebSecurityConfig(UserService userService,
+    public WebSecurityConfig(UserchatService userchatService,
 //                             JwtTokenProvider jwtTokenProvider,
                              CustomAuthenticationProvider authenticationProvider,
                              UserChatRepository userChatRepository) {
-        this.userService = userService;
+        this.userchatService = userchatService;
 //        this.jwtTokenProvider = jwtTokenProvider;
         this.authenticationProvider = authenticationProvider;
         this.userChatRepository = userChatRepository;

@@ -23,10 +23,13 @@ import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequ
 @EnableConfigurationProperties(OAuth2ClientProperties.class)
 public class GoogleAuthConfig {
     private final OAuth2ClientProperties oAuth2ClientProperties;
+    private final ClientRegistrationRepository clientRegistrationRepository;
 
     @Autowired
-    public GoogleAuthConfig(OAuth2ClientProperties oAuth2ClientProperties) {
+    public GoogleAuthConfig(OAuth2ClientProperties oAuth2ClientProperties, 
+                            ClientRegistrationRepository clientRegistrationRepository) {
         this.oAuth2ClientProperties = oAuth2ClientProperties;
+        this.clientRegistrationRepository = clientRegistrationRepository;
     }
 
     @Override
@@ -72,6 +75,9 @@ public class GoogleAuthConfig {
                     return builder.build();
                 }
         );
+    }
+
+    private Object clientRegistrationRepository() {
     }
 
     @Bean
