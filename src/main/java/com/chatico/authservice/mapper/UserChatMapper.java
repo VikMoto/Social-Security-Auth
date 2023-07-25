@@ -16,7 +16,7 @@ public class UserChatMapper implements Mapper<UserChat, UserChatDto> {
         if (isNull(source)) {
             return null;
         }
-        UserChatDto target = UserChatDto.of(
+        UserChatDto target = new UserChatDto(
                 source.getId(),
                 source.getUsername(),
                 source.getUserPic());

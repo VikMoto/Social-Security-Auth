@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class EmailAuthProvider {
     private final UserchatService userchatService;
     private final PasswordEncoder passwordEncoder;

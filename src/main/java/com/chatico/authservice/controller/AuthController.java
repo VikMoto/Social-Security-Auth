@@ -1,12 +1,8 @@
 package com.chatico.authservice.controller;
-//import com.chatico.authservice.dto.LoginRequestDTO;
-//import com.chatico.authservice.dto.LoginResponseDTO;
-//import com.chatico.authservice.service.UserService;
 
 import com.chatico.authservice.dto.LoginRequestDTO;
 import com.chatico.authservice.dto.LoginResponseDTO;
 import com.chatico.authservice.service.UserAccountService;
-import com.chatico.authservice.util.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,13 +17,14 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final UserAccountService userAccountService;
-    private final JwtTokenProvider jwtTokenProvider;
+//    private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, UserAccountService userAccountService, JwtTokenProvider jwtTokenProvider) {
+    public AuthController(AuthenticationManager authenticationManager,
+                          UserAccountService userAccountService) {
         this.authenticationManager = authenticationManager;
         this.userAccountService = userAccountService;
-        this.jwtTokenProvider = jwtTokenProvider;
+
     }
 
     @PostMapping("/login")
@@ -37,9 +34,9 @@ public class AuthController {
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = jwtTokenProvider.generateToken(authentication.getName());
+//        String jwt = jwtTokenProvider.generateToken(authentication.getName());
 
         UserDetails userDetails = (UserDetails) userAccountService.loadUserByUsername(loginRequest.getUsername());
-        return ResponseEntity.ok(new LoginResponseDTO(jwt, userDetails.getUsername()));
+        return ResponseEntity.ok(new LoginResponseDTO(null, userDetails.getUsername()));
     }
 }

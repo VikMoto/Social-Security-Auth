@@ -68,26 +68,26 @@ public class WebSecurityConfig {
     }
 
 
-//    @Bean
-//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws  Exception {
-//        httpSecurity
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests((authz) -> authz
-//                        .requestMatchers(HttpMethod.POST,"/", "/api/auth/login", "/oauth/**").permitAll()
-//                        .anyRequest().authenticated()
-//                )
-//                .formLogin(form -> form
-//                                .loginPage("/login")
-////						.failureUrl("/authentication/login?failed") // default is /login?error
-////						.loginProcessingUrl("/authentication/login/process") // default is /login
-//                                .usernameParameter("email")
-//                                .passwordParameter("pass")
-//                                .defaultSuccessUrl("/list")
-//                                .permitAll()
-//                );
-////        httpSecurity.addFilterBefore(new com.chatico.authservice.filter.JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
-//
-//        return httpSecurity.build();
-//    }
+    @Bean
+    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws  Exception {
+        httpSecurity
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests((authz) -> authz
+                        .requestMatchers(HttpMethod.POST,"/", "/api/auth/login", "/oauth/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .formLogin(form -> form
+                                .loginPage("/login")
+//						.failureUrl("/authentication/login?failed") // default is /login?error
+//						.loginProcessingUrl("/authentication/login/process") // default is /login
+                                .usernameParameter("email")
+                                .passwordParameter("pass")
+                                .defaultSuccessUrl("/list")
+                                .permitAll()
+                );
+//        httpSecurity.addFilterBefore(new com.chatico.authservice.filter.JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+
+        return httpSecurity.build();
+    }
 
 }
