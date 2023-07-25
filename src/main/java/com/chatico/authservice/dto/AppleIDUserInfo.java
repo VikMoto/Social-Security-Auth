@@ -1,4 +1,4 @@
-package com.chatico.authservice.domain;
+package com.chatico.authservice.dto;
 
 import lombok.Data;
 

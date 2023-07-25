@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Log4j2
@@ -40,13 +42,12 @@ public class UserChatController {
     @PostMapping()
     public UserChat createUserChat(@RequestBody UserchatRegDto userchatRegDto) {
         UserChat userChat = UserChat.builder()
-                .username(userchatRegDto.getName())
+                .username(userchatRegDto.getUsername())
                 .email(userchatRegDto.getEmail())
                 .password("{bcrypt}" + bCryptPasswordEncoder.encode(userchatRegDto.getPassword()))
                 .userPic(userchatRegDto.getUserPic())
                 .gender(userchatRegDto.getGender())
                 .birthday(userchatRegDto.getBirthday())
-                .provider(Provider.LOCAL)
                 .locale(null)
                 .lastVisit(LocalDateTime.now())
                 .build();
@@ -54,15 +55,11 @@ public class UserChatController {
         UserChat userChatSaved = userChatRepository.save(userChat);
 
         log.info("userChatSaved {}", userChatSaved);
-        List<String> roleNames = userchatRegDto.getRoles();
-        List<Role> rolesToSave = new ArrayList<>();
+        Set<Role> roleNames = userchatRegDto.getRoles();
+        Set<Role> rolesToSave = new HashSet<>();
 
         if (roleNames != null) {
-            for (String roleName : roleNames) {
-                Role role = new Role(roleName);
-                role.setUserChat(userChatSaved);
-                rolesToSave.add(role);
-            }
+            rolesToSave = roleNames;
         }
         log.info("rolesToSave {}", rolesToSave);
 

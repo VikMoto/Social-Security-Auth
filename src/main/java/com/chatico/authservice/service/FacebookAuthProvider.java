@@ -1,7 +1,7 @@
 package com.chatico.authservice.service;
 
-import com.chatico.authservice.domain.FacebookAuthClient;
-import com.chatico.authservice.domain.FacebookUserInfo;
+import com.chatico.authservice.dto.FacebookAuthClient;
+import com.chatico.authservice.dto.FacebookUserInfo;
 import com.chatico.authservice.domain.UserChat;
 import org.springframework.stereotype.Service;
 

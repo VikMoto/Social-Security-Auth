@@ -40,9 +40,6 @@ public class UserChat {
 
     private boolean enabled;
 
-    @Enumerated(EnumType.STRING)
-    private Provider provider;
-
     private String AppleID;
 
     private String FacebookId;
@@ -72,6 +69,11 @@ public class UserChat {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastVisit;
 
+    private Boolean isAccountNonExpired;
+    private Boolean isAccountNonLocked;
+    private Boolean isCredentialsNonExpired;
+    private Boolean isEnabled;
+
     @OneToMany(
             mappedBy = "userChat",
             orphanRemoval = true,
@@ -96,5 +98,21 @@ public class UserChat {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    public boolean isAccountNonExpired() {
+        return isAccountNonExpired;
+    }
+
+    public boolean isAccountNonLocked() {
+        return isAccountNonLocked;
+    }
+
+    public boolean isCredentialsNonExpired() {
+        return isCredentialsNonExpired;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
     }
 }

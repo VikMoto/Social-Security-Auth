@@ -1,9 +1,9 @@
-package com.chatico.authservice.domain;
+package com.chatico.authservice.dto;
 
 import lombok.Data;
 
 @Data
-public class FacebookUserInfo {
+public class GoogleUserInfo {
     private String id;
     private String email;
     private String name;

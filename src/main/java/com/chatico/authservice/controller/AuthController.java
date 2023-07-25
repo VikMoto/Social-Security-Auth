@@ -3,6 +3,9 @@ package com.chatico.authservice.controller;
 //import com.chatico.authservice.dto.LoginResponseDTO;
 //import com.chatico.authservice.service.UserService;
 
+import com.chatico.authservice.dto.LoginRequestDTO;
+import com.chatico.authservice.dto.LoginResponseDTO;
+import com.chatico.authservice.service.UserAccountService;
 import com.chatico.authservice.util.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +20,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth")
 public class AuthController {
     private final AuthenticationManager authenticationManager;
-    private final UserService userService;
+    private final UserAccountService userAccountService;
     private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, UserService userService, JwtTokenProvider jwtTokenProvider) {
+    public AuthController(AuthenticationManager authenticationManager, UserAccountService userAccountService, JwtTokenProvider jwtTokenProvider) {
         this.authenticationManager = authenticationManager;
-        this.userService = userService;
+        this.userAccountService = userAccountService;
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
@@ -36,7 +39,7 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtTokenProvider.generateToken(authentication.getName());
 
-        UserDetails userDetails = userService.loadUserByUsername(loginRequest.getUsername());
+        UserDetails userDetails = (UserDetails) userAccountService.loadUserByUsername(loginRequest.getUsername());
         return ResponseEntity.ok(new LoginResponseDTO(jwt, userDetails.getUsername()));
     }
 }

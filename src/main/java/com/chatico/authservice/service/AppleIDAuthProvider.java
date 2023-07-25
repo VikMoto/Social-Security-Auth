@@ -1,11 +1,10 @@
 package com.chatico.authservice.service;
 
 
-import com.chatico.authservice.domain.AppleIDAuthClient;
-import com.chatico.authservice.domain.AppleIDUserInfo;
+import com.chatico.authservice.dto.AppleIDAuthClient;
+import com.chatico.authservice.dto.AppleIDUserInfo;
 import com.chatico.authservice.domain.UserChat;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 

@@ -1,7 +1,7 @@
 package com.chatico.authservice.service;
 
-import com.chatico.authservice.domain.GoogleAuthClient;
-import com.chatico.authservice.domain.GoogleUserInfo;
+import com.chatico.authservice.dto.GoogleAuthClient;
+import com.chatico.authservice.dto.GoogleUserInfo;
 import com.chatico.authservice.domain.UserChat;
 import org.springframework.stereotype.Service;
 

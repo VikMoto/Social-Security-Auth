@@ -3,7 +3,6 @@ package com.chatico.authservice.configuration;
 import com.chatico.authservice.repositiry.UserChatRepository;
 import com.chatico.authservice.service.CustomAuthenticationProvider;
 import com.chatico.authservice.service.CustomUserDetailService;
-import com.chatico.authservice.service.UserService;
 import com.chatico.authservice.service.UserchatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
