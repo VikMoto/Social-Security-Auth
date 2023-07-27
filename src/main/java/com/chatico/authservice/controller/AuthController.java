@@ -2,7 +2,9 @@ package com.chatico.authservice.controller;
 
 import com.chatico.authservice.dto.LoginRequestDTO;
 import com.chatico.authservice.dto.LoginResponseDTO;
+import com.chatico.authservice.service.CustomAuthenticationProvider;
 import com.chatico.authservice.service.UserAccountService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,19 +15,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/auth")
 public class AuthController {
-    private final AuthenticationManager authenticationManager;
+    private final CustomAuthenticationProvider authenticationManager;
     private final UserAccountService userAccountService;
 //    private final JwtTokenProvider jwtTokenProvider;
 
-    @Autowired
-    public AuthController(AuthenticationManager authenticationManager,
-                          UserAccountService userAccountService) {
-        this.authenticationManager = authenticationManager;
-        this.userAccountService = userAccountService;
 
-    }
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequest) {

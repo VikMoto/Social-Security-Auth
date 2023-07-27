@@ -1,7 +1,6 @@
 package com.chatico.authservice.service;
 
-import com.chatico.authservice.repositiry.UserChatRepository;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -11,24 +10,21 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-;
 
 
 @Service
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private final CustomUserDetailService userDetailService;
-    private final PasswordEncoder passwordEncoder;
-//    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
+
 
     @Autowired
     public CustomAuthenticationProvider(CustomUserDetailService userDetailService,
-                                        PasswordEncoder passwordEncoder) {
+                                        BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userDetailService = userDetailService;    
-        this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder = bCryptPasswordEncoder;
 }
 
 

@@ -29,21 +29,20 @@ public class WebSecurityConfig {
 //    private final JwtTokenProvider jwtTokenProvider;
     private final CustomAuthenticationProvider authenticationProvider;
     private final UserChatRepository userChatRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
 
     @Autowired
     public WebSecurityConfig(UserchatService userchatService,
 //                             JwtTokenProvider jwtTokenProvider,
                              CustomAuthenticationProvider authenticationProvider,
-                             UserChatRepository userChatRepository) {
+                             UserChatRepository userChatRepository,
+                             BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userchatService = userchatService;
 //        this.jwtTokenProvider = jwtTokenProvider;
         this.authenticationProvider = authenticationProvider;
         this.userChatRepository = userChatRepository;
-    }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        this.passwordEncoder = bCryptPasswordEncoder;
     }
 
     @Bean
@@ -57,7 +56,7 @@ public class WebSecurityConfig {
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
-        authProvider.setPasswordEncoder(passwordEncoder());
+        authProvider.setPasswordEncoder(passwordEncoder);
         return authProvider;
     }
 

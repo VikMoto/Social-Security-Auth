@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c26a24-c374-43e0-bb2a-5378ffeba7f8" name="Changes" comment="application.yml">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/RoleTypes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/LoginRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/LoginResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/mapper/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/mapper/UserChatMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/mapper/UserChatMapperReg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/UserAccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/ulils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="54c26a24-c374-43e0-bb2a-5378ffeba7f8" name="Changes" comment="context form a cycle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/controller/UserChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/controller/UserChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/AppleIDAuthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/AppleIDAuthClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/AppleIDUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/AppleIDUserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/FacebookAuthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/FacebookAuthClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/FacebookUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/FacebookUserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/GoogleAuthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/GoogleAuthClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/GoogleUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/GoogleUserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/UserChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/UserChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/domain/user_chat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/UserChatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/UserChatDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/UserchatRegDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/dto/UserchatRegDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/AppleIDAuthProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/AppleIDAuthProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/FacebookAuthProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/FacebookAuthProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/GoogleAuthProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/GoogleAuthProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/CustomAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chatico/authservice/service/CustomAuthenticationProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,27 +53,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/HOME/Chatico-team/Auth-service/auth-service/src/main/java/com/chatico/authservice/domain",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "ac71c2c7a3928becbe12e161ef31481b",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/HOME/Chatico-team/Auth-service/auth-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ac71c2c7a3928becbe12e161ef31481b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.chatico.authservice.domain" />
       <recent name="com.chatico.authservice.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\HOME\Chatico-team\Auth-service\auth-service" />
       <recent name="E:\HOME\Chatico-team\Auth-service\auth-service\src\main\java\com\chatico\authservice\domain" />
       <recent name="E:\HOME\Chatico-team\Auth-service\auth-service\src\main\java\com\chatico\authservice" />
       <recent name="E:\HOME\Chatico-team\Auth-service\auth-service\src\main\resources" />
@@ -132,7 +118,9 @@
       <workItem from="1690106636902" duration="667000" />
       <workItem from="1690128576963" duration="1340000" />
       <workItem from="1690215616364" duration="10189000" />
-      <workItem from="1690295662066" duration="4557000" />
+      <workItem from="1690295662066" duration="7455000" />
+      <workItem from="1690396323208" duration="764000" />
+      <workItem from="1690461760088" duration="902000" />
     </task>
     <task id="LOCAL-00001" summary="Email, Google, Facebook, Apple providers">
       <option name="closed" value="true" />
@@ -150,15 +138,53 @@
       <option name="project" value="LOCAL" />
       <updated>1690226485765</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="DTO, Mapper , AuthService">
+      <option name="closed" value="true" />
+      <created>1690300748073</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690300748073</updated>
+    </task>
+    <task id="LOCAL-00004" summary="issues SecurityFilterChainConfig&#10;JwtAuthenticationToken">
+      <option name="closed" value="true" />
+      <created>1690300991396</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690300991396</updated>
+    </task>
+    <task id="LOCAL-00005" summary="context form a cycle">
+      <option name="closed" value="true" />
+      <created>1690302127956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690302127956</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Email, Google, Facebook, Apple providers" />
     <MESSAGE value="application.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="application.yml" />
+    <MESSAGE value="DTO, Mapper , AuthService" />
+    <MESSAGE value="issues SecurityFilterChainConfig&#10;JwtAuthenticationToken" />
+    <MESSAGE value="context form a cycle" />
+    <option name="LAST_COMMIT_MESSAGE" value="context form a cycle" />
   </component>
 </project>
